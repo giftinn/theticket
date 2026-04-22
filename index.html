@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Boarding Pass</title>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<div class="wrapper">
+  <div class="ticket">
+
+    <div class="ticket-left">
+      <h2 class="title">Love Boarding Pass</h2>
+
+      <div class="info">
+        <div>
+          <p class="label">Passenger</p>
+          <p class="value name-trigger">Your Name</p>
+        </div>
+
+        <div>
+          <p class="label">From</p>
+          <p class="value">My Ordinary Days</p>
+        </div>
+
+        <div>
+          <p class="label">To</p>
+          <p class="value">A Life With You</p>
+        </div>
+
+        <div>
+          <p class="label">Date</p>
+          <p class="value">14.02.2024</p>
+        </div>
+
+        <div>
+          <p class="label">Gate</p>
+          <p class="value">Forever</p>
+        </div>
+
+        <div>
+          <p class="label">Seat</p>
+          <p class="value seat">14B</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticket-divider"></div>
+
+      <div class="ticket-right">
+
+        <div class="qr-placeholder" id="qrBox">
+
+          <span class="qr-text" id="qrText">
+            Click here to approve your ticket
+          </span>
+
+          <div class="stamp" id="stamp">
+            APPROVED
+          </div>
+
+        </div>
+
+        <p class="status" id="statusText">Not Validated</p>
+
+        <button class="validate-btn" id="validateBtn">
+          Validate Ticket
+        </button>
+
+      </div>
+
+        <!-- LETTER -->
+        <div class="letter-overlay">
+          <div class="letter">
+            <h3>Official Boarding Announcement</h3>
+            <p>
+              Dear Passenger,<br><br>
+              This is to officially confirm that your heart has been successfully
+              validated for a lifetime departure to “A Life With You”.<br><br>
+              Please prepare for permanent happiness, unlimited affection,
+              and nonstop love turbulence.<br><br>
+              This is to officially confirm that your heart has been successfully
+              validated for a lifetime departure to “A Life With You”.<br><br>
+              Please prepare for permanent happiness, unlimited affection,
+              and nonstop love turbulence.<br><br>
+              Flight status: Forever Boarding.<br><br>
+              Sincerely,<br>
+              Department of Love Aviation
+            </p>
+          </div>
+        </div>
+  </div>
+    <button class="start-flight-btn" id="startFlightBtn" disabled>
+      Start The Flight ✈
+    </button>
+</div>
+</div>
+
+<div class="memory-modal" id="memoryModal">
+  <div class="memory-content">
+    <span class="close-memory">&times;</span>
+    
+    <h3 class="memory-title">Boarding Memory #01</h3>
+
+    <div class="polaroid">
+      <img src="4.jpg" alt="Memory">
+      <p class="caption">The day everything felt right 🤍</p>
+    </div>
+  </div>
+</div>
+
+<div class="announcement-overlay" id="announcementOverlay">
+  <div class="announcement-box">
+    <p id="announcementText"></p>
+  </div>
+</div>
+
+<!-- FLIGHT SECTION -->
+<section class="flight-section" id="flightSection">
+
+  <!-- PLANE -->
+  <div class="plane" id="plane">
+    <img src="plane.png" alt="plane">
+  </div>
+
+  <!-- PHOTO STAGE -->
+  <div class="photo-container" id="photoContainer">
+
+    <!-- SESSION 1 -->
+    <img src="4.jpg" class="flight-photo" data-session="1">
+    <img src="4.jpg" class="flight-photo" data-session="1">
+
+    <!-- SESSION 2 -->
+    <img src="4.jpg" class="flight-photo" data-session="2">
+    <img src="4.jpg" class="flight-photo" data-session="2">
+
+    <!-- SESSION 3 -->
+    <img src="4.jpg" class="flight-photo" data-session="3">
+    <img src="4.jpg" class="flight-photo" data-session="3">
+
+  </div>
+
+  <!-- ENDING SCREEN -->
+  <div class="ending-screen" id="endingScreen">
+    <div class="ending-card">
+      <h2>
+        Some journeys are not about the destination,  
+        but about who you fly with 🤍
+      </h2>
+      <button id="restartFlight">Start Again</button>
+    </div>
+  </div>
+
+</section>
+
+<audio id="planeSound" src="song.mp3" preload="auto"></audio>
+<script src="script.js"></script>
+</body>
+</html>
