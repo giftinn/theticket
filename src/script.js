@@ -1,52 +1,69 @@
+// ===============================
+// MODAL MEMORY
+// ===============================
 const nameTrigger = document.querySelector('.name-trigger');
 const modal = document.getElementById('memoryModal');
 const closeBtn = document.querySelector('.close-memory');
 
-nameTrigger.addEventListener('click', () => {
-  modal.classList.add('active');
-});
+if (nameTrigger && modal && closeBtn) {
 
-closeBtn.addEventListener('click', () => {
-  modal.classList.remove('active');
-});
+  nameTrigger.addEventListener('click', () => {
+    modal.classList.add('active');
+  });
 
-modal.addEventListener('click', (e) => {
-  if(e.target === modal){
+  function closeMemory(){
     modal.classList.remove('active');
+
+    setTimeout(() => {
+      playAnnouncement();
+    }, 300);
   }
-});
 
-function closeMemory(){
-  modal.classList.remove('active');
+  closeBtn.addEventListener('click', closeMemory);
 
-  setTimeout(() => {
-    playAnnouncement();
-  }, 300);
+  modal.addEventListener('click', (e) => {
+    if(e.target === modal){
+      closeMemory();
+    }
+  });
 }
 
-closeBtn.addEventListener('click', closeMemory);
+// ===============================
+// ANNOUNCEMENT TYPE EFFECT
+// ===============================
+const overlay = document.getElementById('announcementOverlay');
+const announcementText = document.getElementById('announcementText');
+const wrapper = document.querySelector('.wrapper');
 
-modal.addEventListener('click', (e) => {
-  if(e.target === modal){
-    closeMemory();
+function playAnnouncement(){
+
+  if(!overlay || !announcementText || !wrapper) return;
+
+  wrapper.classList.add('blur');
+  overlay.classList.add('active');
+
+  const message = `Passenger,
+please proceed to Gate Love by validate your ticket.
+Your flight is ready to depart.`;
+
+  let i = 0;
+  announcementText.innerHTML = "";
+
+  function type(){
+    if(i < message.length){
+      announcementText.innerHTML += message.charAt(i);
+      i++;
+      setTimeout(type, 40);
+    } else {
+      setTimeout(() => {
+        overlay.classList.remove('active');
+        wrapper.classList.remove('blur');
+      }, 2000);
+    }
   }
-});
 
-function closeMemory(){
-  modal.classList.remove('active');
-
-  setTimeout(() => {
-    playAnnouncement();
-  }, 300);
+  type();
 }
-
-closeBtn.addEventListener('click', closeMemory);
-
-modal.addEventListener('click', (e) => {
-  if(e.target === modal){
-    closeMemory();
-  }
-});
 
 // ===============================
 // ELEMENT SELECTOR
