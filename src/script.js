@@ -18,7 +18,6 @@ modal.addEventListener('click', (e) => {
 
 const overlay = document.getElementById('announcementOverlay');
 const announcementText = document.getElementById('announcementText');
-const airportSound = document.getElementById('airportSound');
 
 function playAnnouncement(){
 
