@@ -16,37 +16,21 @@ modal.addEventListener('click', (e) => {
   }
 });
 
-const overlay = document.getElementById('announcementOverlay');
-const announcementText = document.getElementById('announcementText');
+function closeMemory(){
+  modal.classList.remove('active');
 
-function playAnnouncement(){
-
-  document.querySelector('.wrapper').classList.add('blur');
-  overlay.classList.add('active');
-
-  const message = `Passenger,
-    please proceed to Gate Love by validate your ticket.
-    Your flight is ready to depart.`;
-
-  let i = 0;
-  announcementText.innerHTML = "";
-
-  function type(){
-    if(i < message.length){
-      announcementText.innerHTML += message.charAt(i);
-      i++;
-      setTimeout(type, 40);
-    } else {
-      // setelah selesai typing
-      setTimeout(() => {
-        overlay.classList.remove('active');
-        document.querySelector('.wrapper').classList.remove('blur');
-      }, 2000);
-    }
-  }
-
-  type();
+  setTimeout(() => {
+    playAnnouncement();
+  }, 300);
 }
+
+closeBtn.addEventListener('click', closeMemory);
+
+modal.addEventListener('click', (e) => {
+  if(e.target === modal){
+    closeMemory();
+  }
+});
 
 function closeMemory(){
   modal.classList.remove('active');
