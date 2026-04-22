@@ -24,12 +24,9 @@ function playAnnouncement(){
   document.querySelector('.wrapper').classList.add('blur');
   overlay.classList.add('active');
 
-  airportSound.currentTime = 0;
-  airportSound.play();
-
   const message = `Passenger,
-please proceed to Gate Love by validate your ticket.
-Your flight is ready to depart.`;
+    please proceed to Gate Love by validate your ticket.
+    Your flight is ready to depart.`;
 
   let i = 0;
   announcementText.innerHTML = "";
