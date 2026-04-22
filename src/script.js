@@ -43,8 +43,8 @@ function playAnnouncement(){
   overlay.classList.add('active');
 
   const message = `Passenger,
-please proceed to Gate Love by validate your ticket.
-Your flight is ready to depart.`;
+  please proceed to Gate Love by approve and then validate your ticket.
+  Your flight is ready to depart.`;
 
   let i = 0;
   announcementText.innerHTML = "";
