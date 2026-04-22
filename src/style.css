@@ -41,14 +41,14 @@ body{
 }
 
 .start-flight-btn:disabled{
-  background:#b9a5a8;
+  background:#000000;
   cursor:not-allowed;
   transform:none;
   opacity:0.6;
 }
 
 .start-flight-btn:hover{
-  background:#6D2932;
+  background:#060606;
   transform:translateY(-3px);
 }
 
