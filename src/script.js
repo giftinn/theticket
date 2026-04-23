@@ -1,6 +1,3 @@
-// ===============================
-// MODAL MEMORY
-// ===============================
 const nameTrigger = document.querySelector('.name-trigger');
 const modal = document.getElementById('memoryModal');
 const closeBtn = document.querySelector('.close-memory');
@@ -28,9 +25,6 @@ if (nameTrigger && modal && closeBtn) {
   });
 }
 
-// ===============================
-// ANNOUNCEMENT TYPE EFFECT
-// ===============================
 const overlay = document.getElementById('announcementOverlay');
 const announcementText = document.getElementById('announcementText');
 const wrapper = document.querySelector('.wrapper');
@@ -65,25 +59,17 @@ function playAnnouncement(){
   type();
 }
 
-// ===============================
-// ELEMENT SELECTOR
-// ===============================
 
 let isValidated = false;
 let currentSession = 1;
 const totalSessions = 3;
 
-// ===============================
-// ELEMENTS
-// ===============================
 const ticket = document.querySelector(".ticket");
 const validateBtn = document.getElementById("validateBtn");
 const status = document.getElementById("statusText");
 const startFlightBtn = document.getElementById("startFlightBtn");
-
 const flightSection = document.querySelector(".flight-section");
 const plane = document.getElementById("plane");
-
 const photos = document.querySelectorAll(".flight-photo");
 const endingScreen = document.getElementById("endingScreen");
 const restartBtn = document.getElementById("restartFlight");
@@ -96,12 +82,9 @@ if(qrBox){
   });
 }
 
-// AUDIO
-const planeSound = document.getElementById("planeSound");
-
 if (planeSound) {
-  planeSound.volume = 0.15; 
-  planeSound.loop = false;  
+  planeSound.volume = 0.8;
+  planeSound.loop = false;
 }
 
 function playPlaneSound(duration = 5000) {
@@ -109,17 +92,13 @@ function playPlaneSound(duration = 5000) {
 
   planeSound.currentTime = 0;
 
-  fadeInAudio(planeSound, 0.15, 1500);
+  fadeInAudio(planeSound, 0.8, 1500);
 
-  // stop setelah X detik
   setTimeout(() => {
     fadeOutAudio(planeSound, 1200);
   }, duration);
 }
 
-// ===============================
-// VALIDATE TICKET
-// ===============================
 if (validateBtn) {
   validateBtn.addEventListener("click", () => {
 
@@ -141,9 +120,7 @@ if (validateBtn) {
   });
 }
 
-// ===============================
-// START FLIGHT
-// ===============================
+
 if (startFlightBtn) {
   startFlightBtn.addEventListener("click", () => {
 
@@ -155,17 +132,11 @@ if (startFlightBtn) {
 
     resetFlight();
 
-    // ===============================
-    // RESET PLANE ANIMATION
-    // ===============================
     plane.classList.remove("fly");
     plane.style.animation = "none";
     plane.offsetHeight;
     plane.style.animation = "";
 
-    // ===============================
-    // START PLANE + SOUND
-    // ===============================
     setTimeout(() => {
 
       plane.classList.add("fly");
@@ -177,9 +148,6 @@ if (startFlightBtn) {
 
     }, 100);
 
-    // ===============================
-    // START PHOTO SESSION
-    // ===============================
     setTimeout(() => {
       showSession(currentSession);
     }, 1200);
@@ -187,9 +155,6 @@ if (startFlightBtn) {
   });
 }
 
-// ===============================
-// RESET
-// ===============================
 function resetFlight() {
 
   photos.forEach(photo => {
@@ -203,9 +168,6 @@ function resetFlight() {
   currentSession = 1;
 }
 
-// ===============================
-// SHOW SESSION
-// ===============================
 function showSession(sessionNumber) {
 
   if (sessionNumber > totalSessions) {
@@ -223,17 +185,14 @@ function showSession(sessionNumber) {
 
   if (!sessionPhotos.length) return;
 
-  // FOTO 1
   sessionPhotos[0].classList.add("show");
 
-  // FOTO 2
   setTimeout(() => {
     if (sessionPhotos[1]) {
       sessionPhotos[1].classList.add("show");
     }
   }, 1500);
 
-  // HIDE SESSION
   setTimeout(() => {
 
     sessionPhotos.forEach(photo => {
@@ -250,10 +209,7 @@ function showSession(sessionNumber) {
   }, 5000);
 }
 
-// ===============================
-// FADE IN AUDIO (CINEMATIC)
-// ===============================
-function fadeInAudio(audio, targetVolume = 0.20, duration = 1500) {
+function fadeInAudio(audio, targetVolume = 0.8, duration = 1500) {
 
   audio.volume = 0;
   audio.play();
@@ -269,9 +225,6 @@ function fadeInAudio(audio, targetVolume = 0.20, duration = 1500) {
   }, 50);
 }
 
-// ===============================
-// RESTART
-// ===============================
 if (restartBtn) {
   restartBtn.addEventListener("click", () => {
     location.reload();
