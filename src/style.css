@@ -89,7 +89,7 @@ body{
 .ticket-left{
   flex:3;
   content:"✈";
-  background: linear-gradient(180deg, #fdfdfd, #efe7e0)
+  background: linear-gradient(180deg, #fdfdfd, #efe7e0);
   padding:40px;
 }
 
@@ -208,7 +208,6 @@ body{
   }
 }
 
-/* Letter overlay */
 .letter-overlay{
   position:absolute;
   inset:0;
