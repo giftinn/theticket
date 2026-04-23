@@ -472,9 +472,6 @@ body{
 }
 
 
-/* ===============================
-   FLIGHT SECTION - SKY BACKGROUND
-================================ */
 .flight-section{
   position:fixed;
   inset:0;
@@ -500,9 +497,6 @@ body{
   pointer-events:auto;
 }
 
-/* ===============================
-   PLANE
-================================ */
 .plane{
   position:absolute;
   top:0%;
@@ -510,7 +504,7 @@ body{
 }
 
 .plane img{
-  width:150px;
+  width:165px;
   transform: translateX(-150%);
 }
 
@@ -528,9 +522,6 @@ body{
   }
 }
 
-/* ===============================
-   PHOTO CONTAINER
-================================ */
 .photo-container{
   position:absolute;
   top:50%;
@@ -544,11 +535,8 @@ body{
   gap:60px;
 }
 
-/* ===============================
-   POLAROID STYLE
-================================ */
 .flight-photo{
-  position:absolute; /* ⬅️ ini kunci */
+  position:absolute; 
   
   width:260px;
   height:340px;
@@ -588,9 +576,6 @@ body{
   transform:translateY(-40px) scale(0.95);
 }
 
-/* ===============================
-   ENDING SCREEN
-================================ */
 .ending-screen{
   position:absolute;
   inset:0;
@@ -640,9 +625,6 @@ body{
 }
 
 
-/* ========================= */
-/* MOBILE FIX TOTAL          */
-/* ========================= */
 
 @media (max-width: 768px) {
 
@@ -768,9 +750,6 @@ body{
     line-height:1.8;
   }
 
-  /* ===============================
-   FLIGHT SECTION
-================================ */
 .flight-section{
   position:fixed;
   inset:0;
@@ -800,7 +779,7 @@ body{
   top:10%;
   left:0;
 
-  width:140px;
+  width:160px;
   z-index:5;
 
   transform:translateX(-150%);
@@ -827,23 +806,20 @@ body{
     padding:10px 10px 50px 10px;
   }
 
-  /* posisi kiri */
+
   .flight-photo.show:nth-of-type(1),
   .flight-photo.show:nth-of-type(3),
   .flight-photo.show:nth-of-type(5){
     transform:translate(-80px, 0) scale(1);
   }
 
-  /* posisi kanan */
+
   .flight-photo.show:nth-of-type(2),
   .flight-photo.show:nth-of-type(4),
   .flight-photo.show:nth-of-type(6){
     transform:translate(80px, 0) scale(1);
   }
 
-/* ===============================
-   ENDING
-================================ */
 .ending-screen{
   position:absolute;
   inset:0;
