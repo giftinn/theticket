@@ -83,7 +83,7 @@ if(qrBox){
 }
 
 if (planeSound) {
-  planeSound.volume = 0.8;
+  planeSound.volume = 1;
   planeSound.loop = false;
 }
 
@@ -92,7 +92,7 @@ function playPlaneSound(duration = 5000) {
 
   planeSound.currentTime = 0;
 
-  fadeInAudio(planeSound, 0.8, 1500);
+  fadeInAudio(planeSound, 1, 1500);
 
   setTimeout(() => {
     fadeOutAudio(planeSound, 1200);
@@ -209,7 +209,7 @@ function showSession(sessionNumber) {
   }, 5000);
 }
 
-function fadeInAudio(audio, targetVolume = 0.8, duration = 1500) {
+function fadeInAudio(audio, targetVolume = 1, duration = 1500) {
 
   audio.volume = 0;
   audio.play();
